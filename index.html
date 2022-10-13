@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shark incidents in Australia</title>
+
+    <!-- Import VegaLite -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+
+    <!-- css and js files -->
+    <link rel="stylesheet" href="layout.css">
+    <script src="chart.js"></script>
+    
+</head>
+<body>
+    <div class="content">
+
+        <div class="pure-g">
+
+            <!-- Title -->
+            <div class="pure-u-1">
+                <h1>AUSTRALIAN SHARK BITE INCIDENTS</h1>
+
+                <p>
+                    The <b>Australian Shark-Incident Database (ASID)</b>, formerly known as the Australian Shark Attack File (ASAF), is a dataset first created by members of the Taronga Conservation Society Australia in 1984. It has since kept an active and uninterrupted record of shark-human interactions, from incidents reporting back from 1791 until now.
+            
+                    <br><br>
+            
+                    At present, the Australian Shark-Incident Database (ASID) is maintained by a joint partnership with <b>Taronga Conservation Society Australia, Flinders University,</b> and the<b> New South Wales Department of Primary Industries.</b>
+
+                    <br><br>
+            
+                </p>
+            </div>
+
+            <!-- Chart 1 -->
+            <div class="pure-u-1">
+                <h2> Distribution of Shark-bite Incidents in Australia from 1791 to 2022</h2>
+
+                <p>➜ Drag the <b>Years before</b> slider to view cumulative incidents by year
+                <br>
+                ➜ Filter by <b>Provoked/Unprovoked</b> shark incidents</p>
+            </div>
+
+            <div class="pure-u-1", id="incidents_map"> <br> <br> </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
