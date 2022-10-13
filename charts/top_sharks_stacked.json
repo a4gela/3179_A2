@@ -1,0 +1,62 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height": 300,
+    "title":"",
+    "data": {"url": "https://raw.githubusercontent.com/a4gela/3179_A2/main/data/shark.csv"},
+    "transform": [
+        {
+        "aggregate": [{
+         "op": "count",
+         "field": "UIN",
+         "as": "Number_of_incidents"
+        }],
+        "groupby": ["Shark_common_name","Victim_injury"]
+      },
+      {
+        "joinaggregate": [{
+          "op":"sum",
+          "field":"Number_of_incidents",
+          "as":"Total_incidents"
+        }],
+        "groupby": ["Shark_common_name"]
+      },
+      {"filter":"datum.Total_incidents >= 72"}
+    ],
+    "encoding": {
+      "x": {
+        "field": "Number_of_incidents",
+        "type": "quantitative",
+        "title": "Number of incidents"
+        },
+      "y": {
+        "field": "Shark_common_name",
+        "type":"nominal",
+        "title": "Shark",
+        "sort": {"field":"Number_of_incidents", "order":"descending"}
+        }
+    },
+    "layer":[
+      {
+        "mark": "bar",
+        "encoding": {
+          "color": {
+            "field": "Victim_injury",
+            "type": "ordinal",
+            "title": "Injury status",
+            "scale": {
+              "domain":["uninjured","injured","fatal"],
+              "range": ["#003f5c", "#bc5090", "#ffa600"]
+            }
+          },
+          "tooltip": [
+            {"field": "Shark_common_name", "type":"nominal", "title": "Shark"},
+            {"field": "Victim_injury", "type": "ordinal", "title": "Injury status"},
+            {"field": "Number_of_incidents", "type":"quantitative", "title": "Number of incidents"},
+            {"field":"Total_incidents","type":"quantitative","title":"Total incidents by shark"}
+          ]
+        }
+      }
+    ]
+  }
+  

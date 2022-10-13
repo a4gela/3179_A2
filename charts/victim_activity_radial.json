@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/a4gela/3179_A2/main/data/victim_activity.csv"
+    },
+    "layer": [{
+      "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+    },{
+      "mark": {"type": "text", "radiusOffset": 10},
+      "encoding": {
+        "text": {"field": "Number_of_incidents", "type": "quantitative"}
+      }
+    }],
+    "encoding": {
+      "theta": {"field": "Number_of_incidents", "type": "quantitative", "stack": true},
+      "radius": {"field": "Number_of_incidents", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
+      "color": {
+        "field": "Victim_activity",
+        "title":"Victim activity", 
+        "type": "nominal", 
+        "scale": {
+            "domain":["Swimming","Boarding","Snorkelling","Spearfishing","Diving","Other"],
+            "range": ["#003f5c", "#444e86","#58508d", "#bc5090", "#ff6361","#ffa600"]
+          }},
+      "tooltip":[
+        {"field":"Victim_activity", "type":"nominal", "title":"Victim activity"},
+        {"field":"Number_of_incidents", "type": "quantitative", "title":"Number of incidents"}
+      ]
+    }
+  }
+  

@@ -1,0 +1,54 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width":400,
+    "height":300,
+    "data": {"url": "https://raw.githubusercontent.com/a4gela/3179_A2/main/data/shark.csv"},
+    "transform": [{
+        "aggregate": [{
+            "op":"count",
+            "field":"UIN",
+            "as":"Number_of_incidents"
+        }],
+        "groupby": ["Shark_common_name", "Incident_month"]
+    },
+    {
+        "joinaggregate": [{
+            "op":"sum",
+            "field":"Number_of_incidents",
+            "as":"Total_incidents"
+        }],
+        "groupby": ["Shark_common_name"]
+    },
+    {"filter":"datum.Total_incidents >= 72"}],
+    "mark": "circle",
+    "encoding": {
+      "x": {
+        "field": "Incident_month",
+        "type": "ordinal",
+        "timeUnit": "month",
+        "title":"Month"
+      },
+      "y": {
+        "field": "Shark_common_name",
+        "type": "nominal",
+        "sort":{"field":"Total_incidents","order":"descending"},
+        "title":"Shark"
+      },
+      "size": {
+        "field": "Number_of_incidents",
+        "type": "quantitative",
+        "title":"Number of incidents",
+        "scale": {"rangeMax":2000}
+      },
+      "color":{
+        "field":"Number_of_incidents",
+        "type": "quantitative"
+      },
+      "tooltip":[
+        {"field":"Shark_common_name","type":"nominal","title":"Shark"},
+        {"field":"Incident_month","type":"ordinal", "timeUnit":"month","title":"Month"},
+        {"field":"Number_of_incidents","type": "quantitative","title":"Number of incidents"}        
+      ]
+    }
+  }
+  

@@ -46,7 +46,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/a4gela/3179_A2/main/data/incidents_map.csv"
+        "url": "https://raw.githubusercontent.com/a4gela/3179_A2/main/data/shark.csv"
       },
       "transform": [
           {"filter": "Provoked_selection == null || datum.Provoked_unprovoked == Provoked_selection"},
@@ -64,7 +64,7 @@
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
         "tooltip":[
-          {"field": "Incident_year", "type":"quantitative"},
+          {"field": "Incident_year", "type":"quantitative", "title":"Year"},
           {"field":"State", "type":"nominal", "title":"State"},
           {"field":"Location", "type":"nominal", "title":"Location"},
           {"field":"Shark_common_name", "type":"nominal", "title":"Shark"},
@@ -87,6 +87,22 @@
           "scale":{
             "domain":[0,10]
           }}
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/a4gela/3179_A2/main/data/states.csv"
+      },
+      "mark":{"type":"text"},
+      "encoding": {
+        "longitude":{"field":"Longitude", "type": "quantitative"},
+        "latitude":{"field":"Latitude", "type": "quantitative"},
+        "text":{"field":"State", "type":"nominal"},
+        "color":{"value":"gray"},
+        "tooltip":[
+          {"field":"State", "type":"nominal"},
+          {"field":"Number_of_incidents", "type": "quantitative", "title":"Total incidents from all years"}
+        ]
       }
     }
   ]
