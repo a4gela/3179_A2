@@ -4,24 +4,26 @@
     "height": 400,
     "title":"",
     "data": {"url": "https://raw.githubusercontent.com/a4gela/3179_Homework10/main/shark.csv"},
+    "encoding": {
+        "x":{
+            "field":"Incident_year",
+            "type":"ordinal",
+            "timeUnit":{
+                "unit":"year",
+                "step":10
+            },
+            "title":"Year"
+        },
+        "y":{
+            "aggregate":"count",
+            "field":"UID",
+            "type":"quantitative"
+        }
+    },
     "layer":[
         {
             "mark":"bar",
             "encoding": {
-                "x":{
-                    "field":"Incident_year",
-                    "type":"ordinal",
-                    "timeUnit":{
-                        "unit":"year",
-                        "step":10
-                    },
-                    "title":"Year"
-                },
-                "y":{
-                    "aggregate":"count",
-                    "field":"UID",
-                    "type":"quantitative"
-                },
                 "color":{
                     "value":"lightgray"
                 }
@@ -30,21 +32,6 @@
         {
             "mark":"line",
             "encoding": {
-                "x":{
-                    "field":"Incident_year",
-                    "type":"ordinal",
-                    "timeUnit":{
-                        "unit":"year",
-                        "step":10
-                    },
-                    "title":"Year"
-                },
-                "y":{
-                    "aggregate":"count",
-                    "field":"UID",
-                    "type":"quantitative",
-                    "title":"Number of incidents"
-                },
                 "color":{
                     "field":"Victim_injury",
                     "type": "nominal",
