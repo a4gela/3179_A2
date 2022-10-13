@@ -1,5 +1,25 @@
 var incidents__map = "charts/incidents_map.json";
+var top_sharks_stacked = "charts/top_sharks_stacked.json";
+var timing_bubble = "charts/timing_bubble.json"
+var victim_activity_radial = "charts/victim_activity_radial.json"
+var trend_line_bar = "charts/trend_line_bar.json"
 
 // Chart 1
 vegaEmbed("#incidents_map", incidents__map).then(function(result) {
+}).catch(console.error);
+
+// Chart 2
+vegaEmbed("#top_sharks_stacked", top_sharks_stacked).then(function(result) {
+}).catch(console.error);
+
+// Chart 3
+vegaEmbed("#trend_line_bar", trend_line_bar).then(function(result) {
+}).catch(console.error);
+
+// Chart 5
+vegaEmbed("#timing_bubble", timing_bubble).then(function(result) {
+}).catch(console.error);
+
+// Chart 6
+vegaEmbed("#victim_activity_radial", victim_activity_radial).then(function(result) {
 }).catch(console.error);

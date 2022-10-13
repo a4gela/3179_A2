@@ -8,6 +8,11 @@ body{
     padding: 30px;
 }
 
+.chart {
+    padding: 30px;
+    padding-bottom: 100px;
+}
+
 h1 {
     text-align: left;
     font-weight: bold;
@@ -32,4 +37,16 @@ p {
     line-height: 27px;
     font-family: 'Roboto', sans-serif;
     color: #4c5156;
+}
+
+.uninjured {
+    color: #003f5c
+}
+
+.injured {
+    color: #bc5090
+}
+
+.fatal {
+    color: #ffa600
 }
