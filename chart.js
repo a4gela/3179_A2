@@ -1,11 +1,11 @@
-var incidents__map = "charts/incidents_map.json";
+var incidents_map = "charts/incidents_map.json";
 var top_sharks_stacked = "charts/top_sharks_stacked.json";
 var timing_bubble = "charts/timing_bubble.json"
 var victim_activity_radial = "charts/victim_activity_radial.json"
 var trend_line_bar = "charts/trend_line_bar.json"
 
 // Chart 1
-vegaEmbed("#incidents_map", incidents__map).then(function(result) {
+vegaEmbed("#incidents_map", incidents_map).then(function(result) {
 }).catch(console.error);
 
 // Chart 2
