@@ -42,7 +42,7 @@
         "url": "https://raw.githubusercontent.com/alwaysblazing/Australia-State-TopoJson-MapChart/master/au-states-topo.json",
         "format": {"type": "topojson", "feature": "austates"}
       },
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+      "mark": {"type": "geoshape", "fill": "#e0e0e0", "stroke": "white"}
     },
     {
       "data": {
@@ -74,7 +74,8 @@
         ],
         "color":{
           "field":"Victim_injury", "type":"nominal", "title":"Injury level",
-          "scale":{"domain":["uninjured","injured","fatal"], "range":["#003f5c", "#bc5090", "#ffa600"]}
+          "scale":{"domain":["uninjured","injured","fatal"], "range":["#003f5c", "#bc5090", "#ffa600"]},
+          "legend":null
         },
         "opacity":{
           "condition":{"selection":"Injury_highlight", "value":0.6},
@@ -86,7 +87,8 @@
           "title":"Number of sharks", 
           "scale":{
             "domain":[0,10]
-          }}
+          },
+          "legend":null}
       }
     },
     {
@@ -98,7 +100,7 @@
         "longitude":{"field":"Longitude", "type": "quantitative"},
         "latitude":{"field":"Latitude", "type": "quantitative"},
         "text":{"field":"State", "type":"nominal"},
-        "color":{"value":"gray"},
+        "color":{"value":"#161616"},
         "tooltip":[
           {"field":"State", "type":"nominal"},
           {"field":"Number_of_incidents", "type": "quantitative", "title":"Total incidents from all years"}

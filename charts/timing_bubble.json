@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width":400,
+    "width":500,
     "height":300,
     "data": {"url": "https://raw.githubusercontent.com/a4gela/3179_A2/main/data/shark.csv"},
     "transform": [{
@@ -38,11 +38,18 @@
         "field": "Number_of_incidents",
         "type": "quantitative",
         "title":"Number of incidents",
-        "scale": {"rangeMax":2000}
+        "scale": {
+          "rangeMax":3000},
+        "legend":null
       },
       "color":{
         "field":"Number_of_incidents",
-        "type": "quantitative"
+        "type": "quantitative",
+        "scale":{
+          "domain":[10,20,30,40,50],
+          "range":["#bcb5cd", "#9b93b6", "#8076a1", "#494079", "#1D1949"]
+        },
+        "legend":null
       },
       "tooltip":[
         {"field":"Shark_common_name","type":"nominal","title":"Shark"},

@@ -17,7 +17,8 @@
         "y":{
             "aggregate":"count",
             "field":"UID",
-            "type":"quantitative"
+            "type":"quantitative",
+            "title":"Number of incidents"
         }
     },
     "layer":[
@@ -25,7 +26,7 @@
             "mark":"bar",
             "encoding": {
                 "color":{
-                    "value":"lightgray"
+                    "value":"#e0e0e0"
                 }
             }
         },
@@ -39,6 +40,7 @@
                         "domain":["uninjured","injured","fatal"], 
                         "range":["#003f5c", "#bc5090", "#ffa600"]
                     },
+                    "legend":null,
                     "title":"Victim injury"
                 }
             }
