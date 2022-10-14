@@ -19,7 +19,7 @@
     <!-- import fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- css and js files -->
     <link rel="stylesheet" href="layout.css">
@@ -27,16 +27,28 @@
     
 </head>
 <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a class="active" href="#home">Home</a>
+        <a href="#map">Distribution of incidents</a>
+        <a href="#trend">Trend of incidents</a>
+        <a href="#top5">Top 5 shark perpetrators</a>
+        <a href="#timing">Timing of shark attacks</a>
+        <a href="#victim-activity">Victim activity</a>
+      </div>
+
+    <!-- Content -->
     <div class="content">
 
         <div class="pure-g">
 
             <!-- Title -->
             <div class="pure-u-1">
-                <h1>AUSTRALIAN SHARK-BITE INCIDENTS</h1>
+                <p id="home"><br><i>Visualisation by Angela Ho for FIT3179: Data Visualisation</i></p>
+                <h1>Australian Shark-bite Incidents</h1>
 
                 <p>
-                    The <b>Australian Shark-Incident Database (ASID)</b>, formerly known as the Australian Shark Attack File (ASAF), is a dataset first created by members of the Taronga Conservation Society Australia in 1984. It has since kept an active and uninterrupted record of shark-human interactions, from incidents reporting back from 1791 until now.
+                    The <b><a href="https://taronga.org.au/conservation-and-science/australian-shark-incident-database">Australian Shark-Incident Database (ASID)</a></b>, formerly known as the Australian Shark Attack File (ASAF), is a dataset first created by members of the Taronga Conservation Society Australia in 1984. It has since kept an active and uninterrupted record of shark-human interactions, from incidents reporting back from 1791 until now.
             
                     <br><br>
             
@@ -47,7 +59,7 @@
 
             <!-- Chart 1 -->
             <div class="pure-u-1">
-                <h2><br>Distribution of Shark-bite Incidents in Australia from 1791 to 2022</h2>
+                <h2 id="map"><br>Distribution of Shark-bite Incidents in Australia from 1791 to 2022</h2>
 
                 <p>
                     ➜ Drag the <b>Years before</b> slider to view cumulative incidents by year
@@ -62,7 +74,7 @@
 
             <!-- Chart 3 -->
             <div class="pure-u-1">
-                <h2><br>Trend of Shark-bite incidents</h2>
+                <h2 id="trend"><br>Trend of Shark-bite incidents</h2>
 
                 <p>Write some text here...</p>
             </div>
@@ -71,7 +83,7 @@
 
             <!-- Chart 2 -->
             <div class="pure-u-1">
-                <h2><br>The Top 5 Perpetrators of Shark-bite incidents</h2>
+                <h2 id="top5"><br>The Top 5 Perpetrators of Shark-bite incidents</h2>
 
                 <p>Write some text here...</p>
             </div>
@@ -80,7 +92,7 @@
 
             <!-- Chart 5 -->
             <div class="pure-u-1">
-                <h2><br>Timing of shark bite incidents</h2>
+                <h2 id="timing"><br>Timing of shark bite incidents</h2>
 
                 <p>Write some text here...</p>
             </div>
@@ -89,7 +101,7 @@
 
             <!-- Chart 6 -->
             <div class="pure-u-1">
-                <h2><br>Victim activity during time of incident</h2>
+                <h2 id="victim-activity"><br>Victim activity during time of incident</h2>
 
                 <p>Write some text here...</p>
             </div>
