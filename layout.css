@@ -6,9 +6,9 @@ body{
 .sidebar {
     margin: 0;
     padding: 0;
-    width: 225px;
+    width: 230px;
     background-color: #f4f4f4;
-    position: fixed;
+    position:fixed;
     height: 100%;
     overflow: auto;
 }
@@ -17,6 +17,7 @@ body{
     display: block;
     color: #262626;
     padding: 15px;
+    padding-left: 20px;
     text-decoration: none;
     text-decoration-color: #161616;
     font-family: 'IBM Plex Sans', sans-serif;
@@ -35,15 +36,16 @@ padding-left: 20px;
 background-color: #e0e0e0;
 color: #161616;
 text-decoration: none;
-font-weight:600;
+font-weight: 600;
 }
 
 /* body */
 .content {
-    width: 800px;
+    width: 725px;
     margin:auto;
+    margin-left: 300px;
     padding: 30px;
-    padding-left: 120px;
+    padding-left: 90px;
 }
 
 .chart {
@@ -54,8 +56,8 @@ font-weight:600;
 h1 {
     text-align: left;
     font-weight: 600;
-    font-size: 71px;
-    line-height: 83px;
+    font-size: 68px;
+    line-height: 70px;
     font-family: 'IBM Plex Sans', sans-serif;
     color: #161616;
 }
@@ -79,15 +81,28 @@ p {
 
 /* special text */
 .uninjured {
-    color: #003f5c
+    color: #003f5c;
+    font-weight: 600;
 }
 
 .injured {
-    color: #bc5090
+    color: #bc5090;
+    font-weight: 600;
 }
 
 .fatal {
-    color: #ffa600
+    color: #ffa600;
+    font-weight: 600;
+}
+
+.boarding {
+    color:#444e86;
+    font-weight:600;
+}
+
+.snorkelling {
+    color:#58508d;
+    font-weight:600;
 }
 
 /* links */
@@ -101,4 +116,11 @@ a:hover {
   color: #161616;
   background-color: lightblue;
   text-decoration: none;
+}
+
+/* centering */
+.center {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
 }

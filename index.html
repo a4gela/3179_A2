@@ -29,7 +29,7 @@
 <body>
     <!-- Sidebar -->
     <div class="sidebar">
-        <a class="active" href="#home">Home</a>
+        <a class="active" href="#home">🦈</a>
         <a href="#map">Distribution of incidents</a>
         <a href="#trend">Trend of incidents</a>
         <a href="#top5">Top 5 shark perpetrators</a>
@@ -57,56 +57,91 @@
                 </p>
             </div>
 
+        </div>
+
+        <div class="pure-g">
             <!-- Chart 1 -->
             <div class="pure-u-1">
-                <h2 id="map"><br>Distribution of Shark-bite Incidents in Australia from 1791 to 2022</h2>
+                <h2 id="map"><br>Distribution of Shark-bite Incidents in Australia from 1803 to 2022</h2>
 
                 <p>
+                    Hover over <b>states</b> to see total incidents per state, and over <b>individual points</b> to see details about the year, location, species and nature of the incident. Additionally:
+                    <br><br>
                     ➜ Drag the <b>Years before</b> slider to view cumulative incidents by year
                     <br>
-                    ➜ Filter by <b>Provoked/Unprovoked</b> shark incidents
+                    ➜ Filter by <b><a href="https://www.floridamuseum.ufl.edu/shark-attacks/about/isaf-case-classifications/">Provoked/Unprovoked</a></b> shark incidents
                     <br>
-                    ➜ Click on the <b>Injury level</b> legend to filter between <b><span class='uninjured'>uninjured</span>, <span class='injured'>injured</span></b> and <b><span class='fatal'>fatal</span></b> incidents
+                    ➜ Filter by <b>Injury level</b> to filter between <span class='uninjured'>uninjured</span>, <span class='injured'>injured</span> and <span class='fatal'>fatal</span> incidents
+                    <br><br>
                 </p>
             </div>
 
             <div class="pure-u-1", id="incidents_map"></div>
 
+            <div class="pure-u-1">
+                <p><i>*Please note missing data values in some fields. For example, although the records date back to 1791, details such as the number of sharks was not included, hence not plotted.
+                </i></p>
+            </div>
+        </div>
+
+        <div class="pure-g">
             <!-- Chart 3 -->
             <div class="pure-u-1">
                 <h2 id="trend"><br>Trend of Shark-bite incidents</h2>
 
-                <p>Write some text here...</p>
+                <p>The number of recorded shark incidents has increased since 1791, with drastic increases starting to occur from 1970 and onwards. The steep decrease in 2020 can be attributed to lockdown rules due to COVID-19.
+                <br><br>
+                Most victims come out from a shark incident <span class='uninjured'>uninjured</span>. As of recent (~1980), the number of <span class='fatal'>fatal</span> incidents have been lower than the number of <span class='injured'>injured</span> incidents.</p>
+
+            </div>
+
+            <div class="pure-u-1">
+                <img src="assets/line_bar_legend.png" style="width:550px" class="center">
             </div>
 
             <div class="pure-u-1", id="trend_line_bar"></div>
 
+            <div class="pure-u-1">
+                <p>Note that the trend observed does not necessarily mean <i>shark bite incidents are increasing</i>, only that the number of <i>recorded incidents</i> have increased — whether than be the advent of technology, more people going to beaches, <i>or</i> sharks coming closer to shore in recent years...</p>
+            </div>
+        </div>
+
+        <div class="pure-g">
             <!-- Chart 2 -->
             <div class="pure-u-1">
                 <h2 id="top5"><br>The Top 5 Perpetrators of Shark-bite incidents</h2>
 
-                <p>Write some text here...</p>
+                <p>The <b><a href="https://en.wikipedia.org/wiki/Great_white_shark">white shark</a></b> can be attributed to the most shark incidents, totalling to 359 incidents since the earliest records. Coming second is the <b><a href="https://en.wikipedia.org/wiki/Tiger_shark">tiger shark</a></b>, with the <b><a href="https://en.wikipedia.org/wiki/Wobbegong">wobbegong shark</a></b>, which interesting has no records of <span class="fatal">fatal</span> incidents, coming in third. In fourth and fifth are the <b><a href="https://en.wikipedia.org/wiki/Bull_shark">bull shark</a></b> and <b><a href="https://en.wikipedia.org/wiki/Whale_shark">whaler shark</a></b>.
+                <br><br>
+                Hover over the chart to see detailed information about the number of <span class="uninjured">uninjured</span>, <span class="injured">injured</span> and <span class="fatal">fatal</span> incidents, as well as the <b>total incidents recorded</b> per shark.
+                </p>
             </div>
 
             <div class="pure-u-1", id="top_sharks_stacked"></div>
+        </div>
 
+        <div class="pure-g">
             <!-- Chart 5 -->
             <div class="pure-u-1">
                 <h2 id="timing"><br>Timing of shark bite incidents</h2>
 
-                <p>Write some text here...</p>
+                <p>Shark-bite incidents, in general, are recorded more frequently during the Summer months, January and February. From May through to September, very few incidents are recorded.
+                </p>
             </div>
 
             <div class="pure-u-1", id="timing_bubble"></div>
+        </div>
 
+        <div class="pure-g">
             <!-- Chart 6 -->
             <div class="pure-u-1">
                 <h2 id="victim-activity"><br>Victim activity during time of incident</h2>
 
-                <p>Write some text here...</p>
+                <p>The majority of shark-incident victims were reported to be <span class="uninjured">swimming</span>, <span class="boarding">boarding</span> or <span class="snorkelling">snorkelling</span> during the time of the incident.</p>
             </div>
 
             <div class="pure-u-1", id="victim_activity_radial"></div>
+        </div>
 
     </div>
 </body>
