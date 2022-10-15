@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width":500,
-    "height":300,
+    "width":"container",
+    "height":400,
     "data": {"url": "https://raw.githubusercontent.com/a4gela/3179_A2/main/data/shark.csv"},
     "transform": [{
         "aggregate": [{
@@ -20,7 +20,6 @@
         "groupby": ["Shark_common_name"]
     },
     {"filter":"datum.Total_incidents >= 72"}],
-    "mark": "circle",
     "encoding": {
       "x": {
         "field": "Incident_month",
@@ -33,29 +32,62 @@
         "type": "nominal",
         "sort":{"field":"Total_incidents","order":"descending"},
         "title":"Shark"
-      },
-      "size": {
-        "field": "Number_of_incidents",
-        "type": "quantitative",
-        "title":"Number of incidents",
-        "scale": {
-          "rangeMax":3000},
-        "legend":null
-      },
-      "color":{
-        "field":"Number_of_incidents",
-        "type": "quantitative",
-        "scale":{
-          "domain":[10,20,30,40,50],
-          "range":["#bcb5cd", "#9b93b6", "#8076a1", "#494079", "#1D1949"]
+      }
+    },
+    "layer":[{
+      "mark": "circle",
+      "encoding":{
+        "size": {
+          "field": "Number_of_incidents",
+          "type": "quantitative",
+          "title":"Number of incidents",
+          "scale": {
+            "rangeMax":4000},
+          "legend":null
         },
-        "legend":null
+        "color":{
+          "field":"Number_of_incidents",
+          "type": "quantitative",
+          "scale":{
+            "domain":[10,20,30,40,50],
+            "range":["#bcb5cd", "#9b93b6", "#8076a1", "#494079", "#1D1949"]
+          },
+          "legend":null
+        },
+        "tooltip":[
+          {"field":"Shark_common_name","type":"nominal","title":"Shark"},
+          {"field":"Incident_month","type":"ordinal", "timeUnit":"month","title":"Month"},
+          {"field":"Number_of_incidents","type": "quantitative","title":"Number of incidents"}        
+        ]
+      }
+    },{
+      "mark":{
+        "type":"text",
+        "fontSize":12,
+        "font":"IBM Plex Sans"
       },
-      "tooltip":[
-        {"field":"Shark_common_name","type":"nominal","title":"Shark"},
-        {"field":"Incident_month","type":"ordinal", "timeUnit":"month","title":"Month"},
-        {"field":"Number_of_incidents","type": "quantitative","title":"Number of incidents"}        
-      ]
+      "encoding": {
+        "text":{"field":"Number_of_incidents","type":"quantitative"},
+        "color":{
+          "condition":{
+            "test":"datum.Number_of_incidents >= 30",
+            "value":"#ffffff"
+          },
+          "value":"#161616"
+        }
+      }
+    }],
+    "config": {
+      "font":"IBM Plex Sans",
+      "style":{
+        "cell":{
+          "stroke":"transparent"
+        }
+      },
+      "axis": {
+        "labelFontSize":14,
+        "titleFontSize":14
+      }
     }
   }
   

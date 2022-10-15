@@ -1,8 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 700,
-  "height": 500,
+  "width": 600,
+  "height": 400,
   "params": [
+    {
+      "name": "Year_slider",
+      "value": 1920,
+      "bind": {
+          "input": "range",
+          "min": 1803,
+          "max": 2022,
+          "step": 1,
+          "name": "Years before: "
+      }
+  },
       {
           "name": "Provoked_selection",
           "bind": {
@@ -21,15 +32,23 @@
           }
       },
       {
-          "name": "Year_slider",
-          "value": 0,
-          "bind": {
-              "input": "range",
-              "min": 1791,
-              "max": 2022,
-              "step": 1,
-              "name": "Years before: "
-          }
+        "name":"Injury_selection",
+        "bind":{
+          "input": "select",
+          "options":[
+            null,
+            "uninjured",
+            "injured",
+            "fatal"
+          ],
+          "labels": [
+            "Show all",
+            "Uninjured",
+            "Injured",
+            "Fatal"
+          ],
+          "name":"Injury level: "
+        }
       }
   ],
   "title": "",
@@ -50,6 +69,7 @@
       },
       "transform": [
           {"filter": "Provoked_selection == null || datum.Provoked_unprovoked == Provoked_selection"},
+          {"filter":"Injury_selection == null || datum.Victim_injury == Injury_selection"},
           {"filter": "datum.Incident_year <= Year_slider"}
       ],
       "selection":{
@@ -107,5 +127,13 @@
         ]
       }
     }
-  ]
+  ],
+  "config": {
+    "font":"IBM Plex Sans",
+    "style":{
+      "cell":{
+        "stroke":"transparent"
+      }
+    }
+  }
 }

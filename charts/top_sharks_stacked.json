@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 300,
+    "width": "container",
+    "height": 350,
     "title":"",
     "data": {"url": "https://raw.githubusercontent.com/a4gela/3179_A2/main/data/shark.csv"},
     "transform": [
@@ -38,7 +38,9 @@
     },
     "layer":[
       {
-        "mark": "bar",
+        "mark": {
+          "type":"bar"
+        },
         "encoding": {
           "color": {
             "field": "Victim_injury",
@@ -58,6 +60,18 @@
           ]
         }
       }
-    ]
+    ],
+    "config": {
+      "font":"IBM Plex Sans",
+      "style":{
+        "cell":{
+          "stroke":"transparent"
+        }
+      },
+      "axis": {
+        "labelFontSize":14,
+        "titleFontSize":14
+      }
+    }
   }
   

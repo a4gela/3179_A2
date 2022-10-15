@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
+    "width": "container",
     "height": 400,
     "data": {
       "url": "https://raw.githubusercontent.com/a4gela/3179_A2/main/data/victim_activity.csv"
@@ -8,9 +8,14 @@
     "layer": [{
       "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
     },{
-      "mark": {"type": "text", "radiusOffset": 10},
+      "mark": {"type": "text", "radiusOffset": 50, "size": 14, "fontWeight":600},
       "encoding": {
-        "text": {"field": "Number_of_incidents", "type": "quantitative"}
+        "text": {"field": "Victim_activity", "type": "nominal"}
+      }
+    },{
+      "mark":{"type":"text","radiusOffset":50, "dy":20, "size":14},
+      "encoding": {
+        "text":{"field": "Percentage", "type":"nominal"}
       }
     }],
     "encoding": {
@@ -23,11 +28,20 @@
         "scale": {
             "domain":["Swimming","Boarding","Snorkelling","Spearfishing","Diving","Other"],
             "range": ["#003f5c", "#444e86","#58508d", "#bc5090", "#ff6361","#ffa600"]
-          }},
+          },
+        "legend":null},
       "tooltip":[
         {"field":"Victim_activity", "type":"nominal", "title":"Victim activity"},
+        {"field":"Percentage","type":"nominal", "title":"% of victims"},
         {"field":"Number_of_incidents", "type": "quantitative", "title":"Number of incidents"}
       ]
+    },
+    "config": {
+      "font":"IBM Plex Sans",
+      "style":{
+        "cell":{
+          "stroke":"transparent"
+        }
+      }
     }
   }
-  
