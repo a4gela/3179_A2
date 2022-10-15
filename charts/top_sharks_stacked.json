@@ -27,20 +27,21 @@
       "x": {
         "field": "Number_of_incidents",
         "type": "quantitative",
-        "title": "Number of incidents"
+        "title": "Number of incidents",
+        "sort":null
         },
       "y": {
         "field": "Shark_common_name",
         "type":"nominal",
         "title": "Shark",
-        "sort": {"field":"Number_of_incidents", "order":"descending"}
+        "sort": {"field": "Total_incidents", "order": "descending", "op": "max"}
         }
     },
     "layer":[
       {
         "mark": {
           "type":"bar"
-        },
+        },  
         "encoding": {
           "color": {
             "field": "Victim_injury",
@@ -58,6 +59,18 @@
             {"field": "Number_of_incidents", "type":"quantitative", "title": "Number of incidents"},
             {"field":"Total_incidents","type":"quantitative","title":"Total incidents by shark"}
           ]
+        }
+      },{
+        "mark":{
+          "type":"text",
+          "dx":17,
+          "color":"#4f4f4f",
+          "fontSize":12,
+          "fontWeight":400
+        },
+        "encoding": {
+          "x":{"field":"Total_incidents", "type":"quantitative","sort":null},
+          "text":{"field":"Total_incidents", "type": "quantitative"}
         }
       }
     ],
